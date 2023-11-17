@@ -1,6 +1,14 @@
 import java.util.Scanner;
 public class Cajero {
-	private static double saldo = 100000;
+	private static double fondo = 100000;
+	public static double getFondo()
+	{
+		return fondo;
+	}
+	public static void ajustarFondo(double cantidad)
+	{
+		fondo-=cantidad;
+	}
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
