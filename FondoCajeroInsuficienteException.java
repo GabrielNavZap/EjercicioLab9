@@ -1,6 +1,6 @@
 public class FondoCajeroInsuficienteException extends Exception
 {
-	public FondoCajeroInsuficienteException(mensaje)
+	public FondoCajeroInsuficienteException(String mensaje)
 	{
 		super(mensaje);
 	}

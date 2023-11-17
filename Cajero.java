@@ -29,6 +29,7 @@ public class Cajero {
             } catch (AutenticacionFallidaException e)
             {
 				System.out.println("Error: "+e.getMessage());
+                break;
 			}
         }
         if (cuentaAutenticada!=null)
@@ -77,14 +78,17 @@ public class Cajero {
     private static void realizarRetiro(CuentaBancaria cuenta) throws SaldoInsuficienteException
     {
         try {
+            System.out.println("Fondo disponible para retiro: "+Cajero.getFondo());
             System.out.print("Ingrese la cantidad a retirar: ");
             double cantidad = new Scanner(System.in).nextDouble();
 			if(cantidad>Cajero.getFondo())
 			{
-				throw new FondoCajeroInsuficienteException("Fondo del Cajero Insuficiente")
+				throw new FondoCajeroInsuficienteException("Fondo del Cajero Insuficiente");
 			}
             cuenta.retirar(cantidad);
+            Cajero.ajustarFondo(cantidad);
             System.out.println("Retiro exitoso. Saldo actual: "+cuenta.getSaldo());
+            System.out.println("Fondo restante para retiro: "+Cajero.getFondo());
         } catch(SaldoInsuficienteException | FondoCajeroInsuficienteException e){
             System.out.println("Error: "+e.getMessage());
         }
