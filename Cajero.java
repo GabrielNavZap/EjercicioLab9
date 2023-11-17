@@ -81,11 +81,11 @@ public class Cajero {
             double cantidad = new Scanner(System.in).nextDouble();
 			if(cantidad>Cajero.getFondo())
 			{
-				throw new FondoCajeroInsuficienteException
+				throw new FondoCajeroInsuficienteException("Fondo del Cajero Insuficiente")
 			}
             cuenta.retirar(cantidad);
             System.out.println("Retiro exitoso. Saldo actual: "+cuenta.getSaldo());
-        } catch(SaldoInsuficienteException e){
+        } catch(SaldoInsuficienteException | FondoCajeroInsuficienteException e){
             System.out.println("Error: "+e.getMessage());
         }
     }
