@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class Cajero {
+	private static double saldo = 100000;
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
