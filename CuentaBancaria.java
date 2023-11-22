@@ -41,10 +41,6 @@ public class CuentaBancaria {
     {
         this.saldo+=cantidad;
     }
-    public void depositar(String numeroCuenta,double monto)
-    {
-
-    }
     public void transferir(String cuentaDestino,double monto) throws SaldoInsuficienteException,CuentaInexistenteException
     {
         CuentaBancaria cuentaDestinoObj = buscarCuenta(cuentaDestino);
