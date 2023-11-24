@@ -25,7 +25,6 @@ public class Cajero {
             {
                 cuenta.autenticar(numeroCuentaIngresado,pinIngresado);
                 cuentaAutenticada = cuenta;
-                break;
             } catch (AutenticacionFallidaException e)
             {
 				System.out.println("Error: "+e.getMessage());
